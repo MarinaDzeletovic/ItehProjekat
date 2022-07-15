@@ -10,6 +10,8 @@ import * as multer from 'multer';
 import * as path from 'path';
 import ProductController from "./controller/ProductController";
 
+
+
 const upload = multer({ dest: path.resolve('img/') })
 
 createConnection().then(async connection => {
@@ -44,6 +46,7 @@ createConnection().then(async connection => {
     // register express routes from defined application routes
     app.post('/product', upload.single('file'), ProductController.create);
 
+    
 
 
     Routes.forEach(route => {
