@@ -24,6 +24,7 @@ function App() {
   const [items, setItems] = useState<Order[]>([])
   const [categories, setCategories] = useState<ProductCategory[]>([]);
 
+  
   const getProduct = (id: number) => {
     return products.find(element => element.id === id);
   }
@@ -88,6 +89,7 @@ function App() {
       return [...prev, res.data];
     })
   }
+    
   useEffect(() => {
     (async function () {
       try {
